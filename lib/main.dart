@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:quiz_app/answer.dart';
 import './question.dart';
 
 void main() {
@@ -24,7 +25,7 @@ class MyApp extends State<MyAppstatefull> {
    "what is your age"
  ];
  var _questionIndex=0;
-  void answerQuestion()
+  void _answerQuestion()
   {
     setState(() {
       _questionIndex+=1;
@@ -44,19 +45,11 @@ class MyApp extends State<MyAppstatefull> {
           // ignore: prefer_const_literals_to_create_immutables
           children: [
             Question(_questions[_questionIndex]),
-            RaisedButton(
-              onPressed: answerQuestion,
-              child: const Text("button 1"),
-            ),
-              RaisedButton(
-              onPressed: answerQuestion,
-              // ignore: unnecessary_const
-              child: const Text("button2"),
-            ),
-             RaisedButton(
-              onPressed: answerQuestion,
-              child: const Text("button3"),
-            ),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
+             
+            
           ],
         ),
       ),
